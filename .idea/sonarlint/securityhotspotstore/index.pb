@@ -14,3 +14,5 @@ H
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 4
 .rnv,0\2\029f6bf8a6da9f92d4e44319ec083a8d87e9eef0
+=
+.env.template,c\b\cba580618a52ae1531e8a3a2da7595593afd602d
