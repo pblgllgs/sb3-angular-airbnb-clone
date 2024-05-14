@@ -41,19 +41,17 @@ public class SecurityConfiguration {
     }
 
     @Bean
-    public GrantedAuthoritiesMapper useAuthoritiesMapper() {
+    public GrantedAuthoritiesMapper userAuthoritiesMapper() {
         return authorities -> {
-            Set<GrantedAuthority> grantedAuthoritySet = new HashSet<>();
+            Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
+
             authorities.forEach(grantedAuthority -> {
                 if (grantedAuthority instanceof OidcUserAuthority oidcUserAuthority) {
-                    grantedAuthoritySet.addAll(
-                            SecurityUtils.extractAuthorityFromClaims(
-                                    oidcUserAuthority.getUserInfo().getClaims()
-                            )
-                    );
+                    grantedAuthorities
+                            .addAll(SecurityUtils.extractAuthorityFromClaims(oidcUserAuthority.getUserInfo().getClaims()));
                 }
             });
-            return grantedAuthoritySet;
+            return grantedAuthorities;
         };
     }
 }

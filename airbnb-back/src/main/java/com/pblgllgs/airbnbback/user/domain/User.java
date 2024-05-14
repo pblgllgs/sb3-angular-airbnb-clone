@@ -8,6 +8,7 @@ package com.pblgllgs.airbnbback.user.domain;
 
 import com.pblgllgs.airbnbback.sharedkernel.domain.AbstractAuditingEntity;
 import jakarta.persistence.*;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.util.HashSet;
 import java.util.Objects;
@@ -31,9 +32,10 @@ public class User extends AbstractAuditingEntity<Long> {
     private String email;
     @Column(name = "image_url")
     private String imageUrl;
+    @UuidGenerator
     @Column(name = "public_id", nullable = false)
     private UUID publicId;
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany
     @JoinTable(
             name = "user_authority",
             joinColumns = {
