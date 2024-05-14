@@ -1,0 +1,7 @@
+
+û
+java:S1598"ØThis file "UserService.java" should be located in "com\pblgllgs\airbnbback\user\application" directory, not in "E:\Spring\full-stack\airbnb-app\airbnb-back\src\main\java\com\pblgllgs\airbnbback\user\application\dto".(Æ…ƒäùÿÿÿÿ8ÏÜì§÷1
+˜
+java:S6809'"UCall transactional methods via an injected dependency instead of directly via 'this'.(·Ÿ¾±8±àê§÷1J$e359ea32-a76e-4aa9-9822-3656585e3b3b
+Œ
+java:S2230+"DMake this method "public" or remove the "@Transactional" annotation.(ÉñþŽýÿÿÿÿ8²àê§÷1J$8886240c-9d0f-4d1b-a73a-73d0103ed0e0
