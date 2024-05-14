@@ -67,10 +67,6 @@ public class Listing extends AbstractAuditingEntity<Long> {
         return description;
     }
 
-    public int getGuests() {
-        return guests;
-    }
-
     public int getBedrooms() {
         return bedrooms;
     }
@@ -119,9 +115,6 @@ public class Listing extends AbstractAuditingEntity<Long> {
         this.description = description;
     }
 
-    public void setGuest(int guests) {
-        this.guests = guests;
-    }
 
     public void setBedrooms(int bedrooms) {
         this.bedrooms = bedrooms;
@@ -153,6 +146,18 @@ public class Listing extends AbstractAuditingEntity<Long> {
 
     public void setPictures(Set<ListingPicture> pictures) {
         this.pictures = pictures;
+    }
+
+    public int getGuests() {
+        return guests;
+    }
+
+    public void setGuests(int guests) {
+        this.guests = guests;
+    }
+
+    public void setBeds(int beds) {
+        this.beds = beds;
     }
 
     @Override
