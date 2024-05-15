@@ -8,6 +8,8 @@ import {MenuItem, MenuItemCommandEvent} from "primeng/api";
 import {ToastService} from "../toast.service";
 import {AuthService} from "../../core/auth/auth.service";
 import {User} from "../../core/model/user.model";
+import {DialogService, DynamicDialogRef} from "primeng/dynamicdialog";
+import {PropertiesCreateComponent} from "../../landlord/properties-create/properties-create.component";
 
 @Component({
   selector: 'app-navbar',
@@ -19,6 +21,7 @@ import {User} from "../../core/model/user.model";
     AvatarComponent,
     CategoryComponent
   ],
+  providers: [DialogService],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
@@ -30,13 +33,15 @@ export class NavbarComponent implements OnInit {
 
   toastService = inject(ToastService);
   authService = inject(AuthService);
+  dialogService = inject(DialogService);
+  ref: DynamicDialogRef | undefined
 
   login = () => this.authService.login();
 
   logout = () => this.authService.logout();
 
   currentMenuItems: MenuItem[] | undefined = [];
-  private connectedUser: User = {email: this.authService.notConnected};
+  connectedUser: User = {email: this.authService.notConnected};
 
   constructor() {
     effect(() => {
@@ -52,7 +57,7 @@ export class NavbarComponent implements OnInit {
   }
 
 
-  private fetchMenu():MenuItem[] {
+  private fetchMenu(): MenuItem[] {
     if (this.authService.isAuthenticated()) {
       return [
         {
@@ -93,4 +98,17 @@ export class NavbarComponent implements OnInit {
   hasToBeLandlord() {
     return this.authService.hasAnyAuthority("ROLE_LANDLORD")
   }
+
+  openNewListing(): void {
+    this.ref = this.dialogService.open(PropertiesCreateComponent,
+      {
+        width: "60%",
+        header: "Airbnb your home",
+        closable: true,
+        focusOnShow: true,
+        modal: true,
+        showHeader: true
+      })
+  }
+
 }

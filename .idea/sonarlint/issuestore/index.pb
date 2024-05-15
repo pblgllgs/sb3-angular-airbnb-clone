@@ -38,8 +38,6 @@ Gairbnb-back/src/main/java/com/pblgllgs/airbnbback/user/domain/User.java,2\3\23
 Lairbnb-back/src/main/java/com/pblgllgs/airbnbback/user/domain/Authority.java,5\c\5c0f83d107c36e094efc7c4a986d8528f4f0479e
 â
 Yairbnb-back/src/main/java/com/pblgllgs/airbnbback/listing/application/dto/vo/BathsVO.java,a\4\a450b7ac126e55342f47d4a3b203d3a1f9c6b9a0
-ç
-]airbnb-back/src/main/java/com/pblgllgs/airbnbback/listing/application/dto/vo/BethroomsVO.java,a\5\a5a553bf6b8287ddec622cbe5f7aa4c01677b3ee
 å
 \airbnb-back/src/main/java/com/pblgllgs/airbnbback/listing/application/dto/vo/BedroomsVO.java,5\5\55be9f51658034726c0e344bf96eb7eb006ba196
 à
@@ -64,8 +62,6 @@ aairbnb-back/src/main/java/com/pblgllgs/airbnbback/listing/application/dto/sub/L
 ]airbnb-back/src/main/java/com/pblgllgs/airbnbback/listing/application/dto/SaveListingDTO.java,3\4\348b87d5efff59423a83c22e40033aecaa12dae2
 É
 Sairbnb-back/src/main/java/com/pblgllgs/airbnbback/listing/mapper/ListingMapper.java,a\0\a08564adbe3b56e14c6dec6e2f50a91003f4fd87
-ê
-`airbnb-back/src/main/java/com/pblgllgs/airbnbback/listing/application/dto/CreatedListingDTO.java,4\8\487372f2c97dd56dcf8d0e4b18a451639cf9fdbf
 Ñ
 Tairbnb-back/src/main/java/com/pblgllgs/airbnbback/user/application/Auth0Service.java,e\d\edaa8cbe094a88ee5659e48ef0fc54484ba89aef
 C
