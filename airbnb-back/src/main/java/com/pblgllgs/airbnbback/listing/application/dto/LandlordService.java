@@ -10,6 +10,7 @@ import com.pblgllgs.airbnbback.listing.application.dto.sub.CreatedListingDTO;
 import com.pblgllgs.airbnbback.listing.domain.Listing;
 import com.pblgllgs.airbnbback.listing.mapper.ListingMapper;
 import com.pblgllgs.airbnbback.listing.repository.ListingRepository;
+import com.pblgllgs.airbnbback.sharedkernel.service.State;
 import com.pblgllgs.airbnbback.user.application.Auth0Service;
 import com.pblgllgs.airbnbback.user.application.UserService;
 import com.pblgllgs.airbnbback.user.application.dto.ReadUserDTO;
@@ -57,21 +58,21 @@ public class LandlordService {
         return listingMapper.listingToCreatedListingDTO(savedListing);
     }
 
-//    @Transactional(readOnly = true)
-//    public List<DisplayCardListingDTO> getAllProperties(ReadUserDTO landlord) {
-//        List<Listing> properties = listingRepository.findAllByLandlordPublicIdFetchCoverPicture(landlord.publicId());
-//        return listingMapper.listingToDisplayCardListingDTOs(properties);
-//    }
-//
-//    @Transactional
-//    public State<UUID, String> delete(UUID publicId, ReadUserDTO landlord) {
-//        long deletedSuccessfully = listingRepository.deleteByPublicIdAndLandlordPublicId(publicId, landlord.publicId());
-//        if (deletedSuccessfully > 0) {
-//            return State.<UUID, String>builder().forSuccess(publicId);
-//        } else {
-//            return State.<UUID, String>builder().forUnauthorized("User not authorized to delete this listing");
-//        }
-//    }
+    @Transactional(readOnly = true)
+    public List<DisplayCardListingDTO> getAllProperties(ReadUserDTO landlord) {
+        List<Listing> properties = listingRepository.findAllByLandlordPublicIdFetchCoverPicture(landlord.publicId());
+        return listingMapper.listingToDisplayCardListingDTOs(properties);
+    }
+
+    @Transactional
+    public State<UUID, String> delete(UUID publicId, ReadUserDTO landlord) {
+        long deletedSuccessfully = listingRepository.deleteByPublicIdAndLandlordPublicId(publicId, landlord.publicId());
+        if (deletedSuccessfully > 0) {
+            return State.<UUID, String>builder().forSuccess(publicId);
+        } else {
+            return State.<UUID, String>builder().forUnauthorized("User not authorized to delete this listing");
+        }
+    }
 //
 //    public Optional<ListingCreateBookingDTO> getByListingPublicId(UUID publicId) {
 //        return listingRepository.findByPublicId(publicId).map(listingMapper::mapListingToListingCreateBookingDTO);
