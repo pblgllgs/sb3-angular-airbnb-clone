@@ -8,6 +8,7 @@ package com.pblgllgs.airbnbback.infrastructure.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -31,7 +32,13 @@ public class SecurityConfiguration {
         csrfTokenRequestAttributeHandler.setCsrfRequestAttributeName(null);
         return http
                 .authorizeHttpRequests(authorize ->
-                        authorize.anyRequest().authenticated())
+                        authorize
+                                .requestMatchers(HttpMethod.GET, "api/tenant-listing/get-all-by-category").permitAll()
+                                .requestMatchers(HttpMethod.GET, "api/tenant-listing/get-one").permitAll()
+                                .requestMatchers(HttpMethod.POST, "api/tenant-listing/search").permitAll()
+                                .requestMatchers(HttpMethod.GET, "api/booking/check-availability").permitAll()
+                                .requestMatchers(HttpMethod.GET, "assets/*").permitAll()
+                                .anyRequest().authenticated())
                 .csrf(csrf -> csrf.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
                         .csrfTokenRequestHandler(csrfTokenRequestAttributeHandler))
                 .oauth2Login(Customizer.withDefaults())

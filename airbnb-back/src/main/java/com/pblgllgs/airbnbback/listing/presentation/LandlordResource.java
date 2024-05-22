@@ -8,8 +8,8 @@ package com.pblgllgs.airbnbback.listing.presentation;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pblgllgs.airbnbback.infrastructure.config.SecurityUtils;
+import com.pblgllgs.airbnbback.listing.application.LandlordService;
 import com.pblgllgs.airbnbback.listing.application.dto.DisplayCardListingDTO;
-import com.pblgllgs.airbnbback.listing.application.dto.LandlordService;
 import com.pblgllgs.airbnbback.listing.application.dto.SaveListingDTO;
 import com.pblgllgs.airbnbback.listing.application.dto.sub.CreatedListingDTO;
 import com.pblgllgs.airbnbback.listing.application.dto.sub.PictureDTO;
@@ -43,7 +43,7 @@ public class LandlordResource {
     private final LandlordService landlordService;
     private final Validator validator;
     private final UserService userService;
-    private ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
     public LandlordResource(LandlordService landlordService, Validator validator, UserService userService) {
         this.landlordService = landlordService;

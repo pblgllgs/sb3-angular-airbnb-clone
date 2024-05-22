@@ -1,4 +1,4 @@
-package com.pblgllgs.airbnbback.listing.application.dto;
+package com.pblgllgs.airbnbback.listing.application;
 /*
  *
  * @author pblgl

@@ -28,7 +28,7 @@ public class Booking extends AbstractAuditingEntity<Long> {
     @Column(name = "start_date", nullable = false)
     private OffsetDateTime startDate;
     @Column(name = "end_date", nullable = false)
-    private OffsetDateTime andDate;
+    private OffsetDateTime endDate;
     @Column(name = "total_price", nullable = false)
     private int totalPrice;
     @Column(name = "nb_of_travelers", nullable = false)
@@ -63,12 +63,12 @@ public class Booking extends AbstractAuditingEntity<Long> {
         this.startDate = startDate;
     }
 
-    public OffsetDateTime getAndDate() {
-        return andDate;
+    public OffsetDateTime getEndDate() {
+        return endDate;
     }
 
-    public void setAndDate(OffsetDateTime andDate) {
-        this.andDate = andDate;
+    public void setEndDate(OffsetDateTime endDate) {
+        this.endDate = endDate;
     }
 
     public int getTotalPrice() {
@@ -108,12 +108,12 @@ public class Booking extends AbstractAuditingEntity<Long> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Booking booking = (Booking) o;
-        return totalPrice == booking.totalPrice && numberOfTravelers == booking.numberOfTravelers && Objects.equals(startDate, booking.startDate) && Objects.equals(andDate, booking.andDate) && Objects.equals(fkTenant, booking.fkTenant) && Objects.equals(fkListing, booking.fkListing);
+        return totalPrice == booking.totalPrice && numberOfTravelers == booking.numberOfTravelers && Objects.equals(startDate, booking.startDate) && Objects.equals(endDate, booking.endDate) && Objects.equals(fkTenant, booking.fkTenant) && Objects.equals(fkListing, booking.fkListing);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(startDate, andDate, totalPrice, numberOfTravelers, fkTenant, fkListing);
+        return Objects.hash(startDate, endDate, totalPrice, numberOfTravelers, fkTenant, fkListing);
     }
 
     @Override
@@ -123,7 +123,7 @@ public class Booking extends AbstractAuditingEntity<Long> {
                 ", fkTenant=" + fkTenant +
                 ", numberOfTravelers=" + numberOfTravelers +
                 ", totalPrice=" + totalPrice +
-                ", andDate=" + andDate +
+                ", andDate=" + endDate +
                 ", startDate=" + startDate +
                 '}';
     }

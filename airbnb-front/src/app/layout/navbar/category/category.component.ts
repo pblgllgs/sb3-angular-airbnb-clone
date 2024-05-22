@@ -1,15 +1,15 @@
 import {Component, inject, OnInit} from '@angular/core';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {CategoryService} from "./category.service";
 import {Category, CategoryName} from "./category.model";
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 import {filter, map} from "rxjs";
-import {FaIconComponent} from "@fortawesome/angular-fontawesome";
 
 @Component({
   selector: 'app-category',
   standalone: true,
   imports: [
-    FaIconComponent
+    FontAwesomeModule
   ],
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss'

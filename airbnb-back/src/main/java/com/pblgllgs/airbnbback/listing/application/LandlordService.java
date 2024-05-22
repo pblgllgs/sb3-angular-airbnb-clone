@@ -1,4 +1,4 @@
-package com.pblgllgs.airbnbback.listing.application.dto;
+package com.pblgllgs.airbnbback.listing.application;
 /*
  *
  * @author pblgl
@@ -6,6 +6,9 @@ package com.pblgllgs.airbnbback.listing.application.dto;
  *
  */
 
+import com.pblgllgs.airbnbback.listing.application.dto.DisplayCardListingDTO;
+import com.pblgllgs.airbnbback.listing.application.dto.ListingCreateBookingDTO;
+import com.pblgllgs.airbnbback.listing.application.dto.SaveListingDTO;
 import com.pblgllgs.airbnbback.listing.application.dto.sub.CreatedListingDTO;
 import com.pblgllgs.airbnbback.listing.domain.Listing;
 import com.pblgllgs.airbnbback.listing.mapper.ListingMapper;
@@ -73,21 +76,21 @@ public class LandlordService {
             return State.<UUID, String>builder().forUnauthorized("User not authorized to delete this listing");
         }
     }
-//
-//    public Optional<ListingCreateBookingDTO> getByListingPublicId(UUID publicId) {
-//        return listingRepository.findByPublicId(publicId).map(listingMapper::mapListingToListingCreateBookingDTO);
-//    }
-//
-//    public List<DisplayCardListingDTO> getCardDisplayByListingPublicId(List<UUID> allListingPublicIDs) {
-//        return listingRepository.findAllByPublicIdIn(allListingPublicIDs)
-//                .stream()
-//                .map(listingMapper::listingToDisplayCardListingDTO)
-//                .toList();
-//    }
-//
-//    @Transactional(readOnly = true)
-//    public Optional<DisplayCardListingDTO> getByPublicIdAndLandlordPublicId(UUID listingPublicId, UUID landlordPublicId) {
-//        return listingRepository.findOneByPublicIdAndLandlordPublicId(listingPublicId, landlordPublicId)
-//                .map(listingMapper::listingToDisplayCardListingDTO);
-//    }
+
+    public Optional<ListingCreateBookingDTO> getByListingPublicId(UUID publicId) {
+        return listingRepository.findByPublicId(publicId).map(listingMapper::mapListingToListingCreateBookingDTO);
+    }
+
+    public List<DisplayCardListingDTO> getCardDisplayByListingPublicId(List<UUID> allListingPublicIDs) {
+        return listingRepository.findAllByPublicIdIn(allListingPublicIDs)
+                .stream()
+                .map(listingMapper::listingToDisplayCardListingDTO)
+                .toList();
+    }
+
+    @Transactional(readOnly = true)
+    public Optional<DisplayCardListingDTO> getByPublicIdAndLandlordPublicId(UUID listingPublicId, UUID landlordPublicId) {
+        return listingRepository.findOneByPublicIdAndLandlordPublicId(listingPublicId, landlordPublicId)
+                .map(listingMapper::listingToDisplayCardListingDTO);
+    }
 }
