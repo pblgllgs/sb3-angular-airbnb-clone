@@ -66,10 +66,6 @@ Sairbnb-back/src/main/java/com/pblgllgs/airbnbback/listing/mapper/ListingMapper.
 Tairbnb-back/src/main/java/com/pblgllgs/airbnbback/user/application/Auth0Service.java,e\d\edaa8cbe094a88ee5659e48ef0fc54484ba89aef
 C
 airbnb-back/pom.xml,2\b\2b95a23b6a2f3e6c2bf065b0d63017ca38d0fa90
-é
-^airbnb-back/src/main/java/com/pblgllgs/airbnbback/listing/application/dto/LandlordService.java,f\5\f5c35bf606dad274196d9421da29630a5712e583
-ç
-]airbnb-back/src/main/java/com/pblgllgs/airbnbback/listing/application/dto/PictureService.java,9\3\935b0c6dba6851f6c8ea7dce2e55ef77348996ed
 ä
 Zairbnb-back/src/main/java/com/pblgllgs/airbnbback/listing/mapper/ListingPictureMapper.java,f\f\fff52a25297fd41d0468608b3d5ecda2413f98d5
 å
@@ -100,8 +96,6 @@ Xairbnb-back/src/main/java/com/pblgllgs/airbnbback/listing/application/dto/Searc
 \airbnb-back/src/main/java/com/pblgllgs/airbnbback/booking/application/dto/BookedDateDTO.java,e\8\e8375fd6168f67de72f65eac85d0f5af3b821fc9
 ä
 Zairbnb-back/src/main/java/com/pblgllgs/airbnbback/listing/presentation/TenantResource.java,d\d\dd1068308f6100ce97503e58d36c3058b7c9eb71
-ç
-]airbnb-back/src/main/java/com/pblgllgs/airbnbback/booking/application/dto/BookingService.java,8\d\8dc46f0199ebdb0c7e3fac14fb68e766d2c48432
 â
 Yairbnb-back/src/main/java/com/pblgllgs/airbnbback/booking/application/BookingService.java,5\9\597367f1b159dc9ea2741f2fc48f41ac3ccd1773
 è
@@ -112,3 +106,5 @@ _airbnb-back/src/main/java/com/pblgllgs/airbnbback/booking/application/dto/Booke
 Sairbnb-back/src/main/java/com/pblgllgs/airbnbback/booking/mapper/BookingMapper.java,1\7\17b16b07e2c114fdbc4437ee024e3b961be894c8
 ã
 [airbnb-back/src/main/java/com/pblgllgs/airbnbback/booking/repository/BookingRepository.java,b\7\b72c9789a85ac844d51561f076b894892306841c
+ã
+[airbnb-back/src/main/java/com/pblgllgs/airbnbback/booking/presentation/BookingResource.java,1\3\1391502b605ae41f9b5dbb5984076c0926b93e37
