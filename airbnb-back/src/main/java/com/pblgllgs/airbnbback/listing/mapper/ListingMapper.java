@@ -3,7 +3,7 @@ package com.pblgllgs.airbnbback.listing.mapper;
 import com.pblgllgs.airbnbback.listing.application.dto.DisplayCardListingDTO;
 import com.pblgllgs.airbnbback.listing.application.dto.DisplayListingDTO;
 import com.pblgllgs.airbnbback.listing.application.dto.ListingCreateBookingDTO;
-import com.pblgllgs.airbnbback.listing.application.dto.sub.CreatedListingDTO;
+import com.pblgllgs.airbnbback.listing.application.dto.CreatedListingDTO;
 import com.pblgllgs.airbnbback.listing.application.dto.SaveListingDTO;
 import com.pblgllgs.airbnbback.listing.application.dto.vo.PriceVO;
 import com.pblgllgs.airbnbback.listing.domain.Listing;

@@ -11,7 +11,7 @@ import com.pblgllgs.airbnbback.infrastructure.config.SecurityUtils;
 import com.pblgllgs.airbnbback.listing.application.LandlordService;
 import com.pblgllgs.airbnbback.listing.application.dto.DisplayCardListingDTO;
 import com.pblgllgs.airbnbback.listing.application.dto.SaveListingDTO;
-import com.pblgllgs.airbnbback.listing.application.dto.sub.CreatedListingDTO;
+import com.pblgllgs.airbnbback.listing.application.dto.CreatedListingDTO;
 import com.pblgllgs.airbnbback.listing.application.dto.sub.PictureDTO;
 import com.pblgllgs.airbnbback.sharedkernel.service.State;
 import com.pblgllgs.airbnbback.sharedkernel.service.StatusNotification;
